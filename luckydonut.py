@@ -42,24 +42,40 @@ class Donut:
         for i, base in enumerate(bases):
             print(f"{i+1}. {base}")
         print("")
-        choice = input("Enter the number of your choice: ")
-        self.base = bases[int(choice) - 1]
+        try:
+            choice = input("Enter the number of your choice: ")
+# If user enters a 0 - not working. probably def each choice
+            if int(choice) == 0:
+                print("Cannot select 0. Please enter a valid number.")
+            else:
+                self.base = bases[int(choice) - 1]
+        except (ValueError, IndexError):
+            print("Invalid choice. Please enter a valid number.")
+            self.choose_donut_options()
 
         print("*** Donut toppings ***")
         print("")
         for i, topping in enumerate(toppings):
             print(f"{i+1}. {topping}")
         print("")
-        choice = input("Enter the number of your choice: ")
-        self.topping = toppings[int(choice) - 1]
+        try:
+            choice = input("Enter the number of your choice: ")
+            self.topping = toppings[int(choice) - 1]
+        except (ValueError, IndexError):
+            print("Invalid choice. Please enter a valid number.")
+            self.choose_donut_options()
 
         print("*** Donut extras ***")
         print("")
         for i, extra in enumerate(extras):
             print(f"{i+1}. {extra}")
         print("")
-        choice = input("Enter the number of your choice: ")
-        self.extra = extras[int(choice) - 1]
+        try:
+            choice = input("Enter the number of your choice: ")
+            self.extra = extras[int(choice) - 1]
+        except (ValueError, IndexError):
+            print("Invalid choice. Please enter a valid number.")
+            self.choose_donut_options()
 
 # Write the last lucky donut to a file
     def write_donut(self):
@@ -76,6 +92,7 @@ class Donut:
             self.topping = file.readline().strip()
             self.extra = file.readline().strip()
 
+# Beep boop - initialising the donut
 my_donut = Donut()
 
 # Asks the user if they are feeling lucky and a) generates lucky donut b) lets them choose between their last donut or a custom donut
@@ -97,7 +114,7 @@ else:
 # Writes the current donut to a text file
 my_donut.write_donut()
 
-# Print donut
+# Serves the donut
 if my_donut.topping == "no topping":
     print("")
     print(f"Your donut has a {my_donut.base} base, has {my_donut.topping}, and has {my_donut.extra} as an extra.")
