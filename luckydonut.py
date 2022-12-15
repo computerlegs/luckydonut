@@ -16,10 +16,14 @@ class Donut:
         self.base = random.choice(bases)
         self.topping = random.choice(toppings)
         self.extra = random.choice(extras)
-
     
 my_donut = Donut()
-my_donut.generate_random_donut()
+
+feeling_lucky = input("Are you feeling lucky (y/n)")
+if feeling_lucky.lower() == "y":
+    my_donut.generate_random_donut()
+else:
+    print ("Fair enough, cya.")
 
 # Print donut
 if my_donut.topping == "no topping":
