@@ -1,7 +1,6 @@
 import random
 
 # Welcome to Lucky Donuts!
-print("                             Welcome to Lucky Donuts intro font by JK - https://patorjk.com")
 print("")
 print("                                 _                    _       ")
 print("                     __ __ _____| |__ ___ _ __  ___  | |_ ___ ")
@@ -37,6 +36,7 @@ class Donut:
         
 # Choose custom options donut
     def choose_donut_options(self):
+        print("")
         print("*** Donut bases ***")
         print("")
         for i, base in enumerate(bases):
@@ -53,6 +53,7 @@ class Donut:
             print("Invalid choice. Please enter a valid number.")
             self.choose_donut_options()
 
+        print("")
         print("*** Donut toppings ***")
         print("")
         for i, topping in enumerate(toppings):
@@ -65,6 +66,7 @@ class Donut:
             print("Invalid choice. Please enter a valid number.")
             self.choose_donut_options()
 
+        print("")
         print("*** Donut extras ***")
         print("")
         for i, extra in enumerate(extras):
@@ -105,11 +107,18 @@ else:
     print("")
     print("You donut have to feel lucky all the time!")
     print("")
-    wants_previous = input("Do you want your last donut again? (y/n)")
-    if wants_previous.lower() == "y":
+    print("What do you want instead?")
+    print("")
+    print("1. I'll have the same donut as last time")
+    print("2. Let me choose my own options for base, topping and extras")
+    print("")
+    old_nut_or_specific_nut = int(input("Enter your choice:"))
+    if old_nut_or_specific_nut == 1:
         my_donut.read_donut()
-    else:
+    elif old_nut_or_specific_nut == 2:
         my_donut.choose_donut_options()
+    else:
+        print("Please enter a valid choice (1 or 2)")
 
 # Writes the current donut to a text file
 my_donut.write_donut()
@@ -134,7 +143,6 @@ elif my_donut.topping == "rainbow" and my_donut.extra == "rainbow flakes":
     print("")
     print(f"Your donut has {my_donut.topping} topping and {my_donut.extra} to match... that's pretty. Your base is {my_donut.base}.")
     print("")
-    print("Unicorn Ascii art by 'DR J' https://www.asciiart.eu/mythology/unicorns")
 elif my_donut.topping == "None":
     print("You have never had a lucky donut.")
 else:
