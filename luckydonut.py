@@ -22,4 +22,20 @@ my_donut = Donut()
 my_donut.generate_random_donut()
 
 # Print donut
-print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
+if my_donut.topping == "no topping":
+    print(f"Your donut has a {my_donut.base} base, has {my_donut.topping}, and has {my_donut.extra} as an extra.")
+elif my_donut.topping == "rainbow" and my_donut.extra == "rainbow flakes":
+    print("Wow, a Unicorn donut!")
+    print(f"Your donut has {my_donut.topping} topping, and {my_donut.extra} to match... that's pretty. Your base is {my_donut.base}.")
+    print("                    /")
+    print("               ,.. /")
+    print("             ,'   ';")
+    print("  ,,.__    _,' /';  .")
+    print(" :','  ~~~~    '. '~")
+    print(":' (   )         )::,")
+    print("'. '. .=----=..-~  .;'")
+    print(" '  ;'  ::   ':.  '""")
+    print("   (:   ':    ;)")
+    print("Unicorn Ascii art by 'DR J' https://www.asciiart.eu/mythology/unicorns")
+else:
+    print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
