@@ -60,9 +60,25 @@ class Donut:
         print("")
         choice = input("Enter the number of your choice: ")
         self.extra = extras[int(choice) - 1]
-    
+
+# Write the last lucky donut to a file
+    def write_donut(self):
+        with open('donuts.txt', 'w') as file:
+            file.write(str(self.base) + '\n')
+            file.write(str(self.topping) + '\n')
+            file.write(str(self.extra) + '\n')
+            file.truncate(file.tell() - 1)  # truncate the file to the current position
+
+# Read the last lucky donut from file
+    def read_donut(self):
+        with open('donuts.txt', 'r') as file:
+            self.base = file.readline().strip()
+            self.topping = file.readline().strip()
+            self.extra = file.readline().strip()
+
 my_donut = Donut()
 
+# Asks the user if they are feeling lucky and a) generates lucky donut b) lets them choose between their last donut or a custom donut
 feeling_lucky = input("Are you feeling lucky? (y/n)")
 if feeling_lucky.lower() == "y":
     print("")
@@ -70,8 +86,16 @@ if feeling_lucky.lower() == "y":
     my_donut.generate_random_donut()
 else:
     print("")
-    print("You donut have to feel lucky all the time. Build your own donut then!")
-    my_donut.choose_donut_options()
+    print("You donut have to feel lucky all the time!")
+    print("")
+    wants_previous = input("Do you want your last donut again? (y/n)")
+    if wants_previous.lower() == "y":
+        my_donut.read_donut()
+    else:
+        my_donut.choose_donut_options()
+
+# Writes the current donut to a text file
+my_donut.write_donut()
 
 # Print donut
 if my_donut.topping == "no topping":
@@ -94,6 +118,8 @@ elif my_donut.topping == "rainbow" and my_donut.extra == "rainbow flakes":
     print(f"Your donut has {my_donut.topping} topping and {my_donut.extra} to match... that's pretty. Your base is {my_donut.base}.")
     print("")
     print("Unicorn Ascii art by 'DR J' https://www.asciiart.eu/mythology/unicorns")
+elif my_donut.topping == "None":
+    print("You have never had a lucky donut.")
 else:
     print("")
     print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
