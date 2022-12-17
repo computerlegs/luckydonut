@@ -101,27 +101,52 @@ class Donut:
             self.topping = file.readline().strip()
             self.extra = file.readline().strip()
             
-# TEST: Random donut options
+# Testing the donut
 
 class TestDonut(unittest.TestCase):
     def test_generate_random_donut(self):
         # Create a new Donut object
-        test_donut = Donut()
+        test_random_donut = Donut()
         
         # Generate a random donut
-        test_donut.generate_random_donut()
+        test_random_donut.generate_random_donut()
         
         # Check that the base is in the list of available bases
-        self.assertIn(test_donut.base, bases)
+        self.assertIn(test_random_donut.base, bases)
         
         # Check that the topping is in the list of available toppings
-        self.assertIn(test_donut.topping, toppings)
+        self.assertIn(test_random_donut.topping, toppings)
         
         # Check that the extra is in the list of available extras
-        self.assertIn(test_donut.extra, extras)
+        self.assertIn(test_random_donut.extra, extras)
+        
+    def test_read_donut(self):
+        # Create a new Donut object
+        test_read_donut = Donut()
+        
+        # Write some test data to the 'donuts.txt' file
+        with open('donuts.txt', 'w') as file:
+            file.write('test\n')
+            file.write('test\n')
+            file.write('test\n')
+        
+        # Read the donut from the 'donuts.txt' file
+        test_read_donut.read_donut()
+        
+        # Check that the base is correct
+        self.assertEqual(test_read_donut.base, 'test')
+        
+        # Check that the topping is correct
+        self.assertEqual(test_read_donut.topping, 'test')
+        
+        # Check that the extra is correct
+        self.assertEqual(test_read_donut.extra, 'test')
+
+#  Uncomment the code below to perform tests on file run
 
 # if __name__ == '__main__':
-#     print("Testing random donut generator is generating options from selections")
+#     print("Testing: 1. Random donut generator is generating options from selections")
+#     print("Testing: 2. Testing read and write to file")
 #     unittest.main()
 
 # Beep boop - initialising the donut
