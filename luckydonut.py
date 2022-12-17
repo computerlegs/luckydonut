@@ -1,6 +1,7 @@
 import random
 from art import *
 from extra.donutart import *
+import unittest
 
 # List of available options
 bases = ["regular", "cronut", "chocolate filled", "custard filled"]
@@ -99,6 +100,29 @@ class Donut:
             self.base = file.readline().strip()
             self.topping = file.readline().strip()
             self.extra = file.readline().strip()
+            
+# TEST: Random donut options
+
+class TestDonut(unittest.TestCase):
+    def test_generate_random_donut(self):
+        # Create a new Donut object
+        test_donut = Donut()
+        
+        # Generate a random donut
+        test_donut.generate_random_donut()
+        
+        # Check that the base is in the list of available bases
+        self.assertIn(test_donut.base, bases)
+        
+        # Check that the topping is in the list of available toppings
+        self.assertIn(test_donut.topping, toppings)
+        
+        # Check that the extra is in the list of available extras
+        self.assertIn(test_donut.extra, extras)
+
+# if __name__ == '__main__':
+#     print("Testing random donut generator is generating options from selections")
+#     unittest.main()
 
 # Beep boop - initialising the donut
 my_donut = Donut()
@@ -141,9 +165,9 @@ while True:
             elif menu_option == 3:
                 my_donut.read_donut()
                 break
-        print("Please enter a valid choice (1-3)")
+        print("Please enter a valid choice as a number corresponding to the selection.")
     except ValueError:
-        print("Invalid input. Please enter a valid choice (1-3)")
+        print("Please enter a valid choice as a number corresponding to the selection.")
 
 # Writes the current donut to a text file
 my_donut.write_donut()
