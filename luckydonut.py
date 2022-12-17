@@ -1,51 +1,6 @@
 import random
-
-# Welcome to Lucky Donuts!
-print("")
-print("                                 _                    _       ")
-print("                     __ __ _____| |__ ___ _ __  ___  | |_ ___ ")
-print("                     \ V  V / -_) / _/ _ \ '  \/ -_) |  _/ _ \ ")
-print("                      \_/\_/\___|_\__\___/_|_|_\___|  \__\___/ ")
-print(" ___     __   __ _______ ___   _ __   __   ______  _______ __    _ __   __ _______ _______ ")
-print("|   |   |  | |  |       |   | | |  | |  | |      ||       |  |  | |  | |  |       |       |")
-print("|   |   |  | |  |       |   |_| |  |_|  | |  _    |   _   |   |_| |  | |  |_     _|  _____|")
-print("|   |   |  |_|  |       |      _|       | | | |   |  | |  |       |  |_|  | |   | | |_____ ")
-print("|   |___|       |      _|     |_|_     _| | |_|   |  |_|  |  _    |       | |   | |_____  |")
-print("|       |       |     |_|    _  | |   |   |       |       | | |   |       | |   |  _____| |")
-print("|_______|_______|_______|___| |_| |___|   |______||_______|_|  |__|_______| |___| |_______|")
-print("")
-
-
-# Print ASCII donut
-def donut_image():
-    print("")
-    print("⠀⠀⠀⠀⠀⠀⠀⢀⡠⠤⠄⠀⠒⠂⢀⡤⠤⢀⡀⠀⠀⠀⠀⠀⠀⠀")
-    print("⠀⠀⠀⠀⡀⠔⢈⠀⠀⡿⠀⢀⣤⡄⠈⠋⢁⣀⠀⢈⡒⢄⠀⠀⠀⠀")
-    print("⠀⠀⣠⠊⣁⡀⠉⠋⠀⣦⠀⠀⠁⢀⠀⠀⠀⠛⠀⠘⠃⣄⠑⢄⠀⠀")
-    print("⠀⡔⡁⠀⠉⢁⣄⠄⠀⠈⠀⣶⠀⠈⠛⠀⣠⠄⠶⠦⠀⠑⠀⢬⣧⠀")
-    print("⡐⠀⠿⢠⢄⠀⣀⠀⠀⡠⠄⠠⠔⠉⠢⡀⠉⠀⠀⢀⣴⠆⠀⠈⠁⢣")
-    print("⠃⣤⠄⠀⢁⣄⠙⠀⠘⠀⡠⠒⠉⠉⠒⢄⠉⢢⠀⠀⢀⡀⠟⠃⢴⡤")
-    print("⡀⠀⢔⡀⠈⠋⠠⢄⠰⡜⠀⠀⠀⠀⠀⠀⠱⡜⢠⡤⠈⠛⠁⢀⣄⢀")
-    print("⡇⠀⣀⡀⠀⠀⠀⠉⠀⠘⠢⣀⠀⠀⠀⡠⠊⢀⠈⠀⠀⢸⡄⠈⠁⢸")
-    print("⠀⠸⡐⠂⠤⢀⠀⢶⠀⠀⣈⡀⠀⢈⡅⠈⠘⡁⠀⠶⠅⡀⠠⠒⡙⠀")
-    print("⠀⠀⠐⡄⠀⠀⠱⡀⠀⠀⠉⢁⡠⢏⠁⠀⠚⠁⠀⢠⠊⠀⢀⠜⠀⠀")
-    print("⠀⠀⠀⠈⠢⠀⠀⠈⠒⠀⠂⠁⠀⠀⠉⠂⠤⠤⠐⠁⢀⠴⠋⠀⠀⠀")
-    print("⠀⠀⠀⠀⠀⠈⠑⠠⢄⡀⠀⠀⠀⠀⠀⠀⣀⡠⠄⠂⠁⠀⠀⠀⠀⠀")
-    print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠁⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀")               
-
-# Print ASCII unicorn
-def unicorn_image():
-    print("")
-    print("                    /")
-    print("               ,.. /")
-    print("             ,'   ';")
-    print("  ,,.__    _,' /';  .")
-    print(" :','  ~~~~    '. '~")
-    print(":' (   )         )::,")
-    print("'. '. .=----=..-~  .;'")
-    print(" '  ;'  ::   ':.  '""")
-    print("   (:   ':    ;)")
-    print("")
+from art import *
+from extra.donutart import *
 
 # List of available options
 bases = ["regular", "cronut", "chocolate filled", "custard filled"]
@@ -148,7 +103,9 @@ class Donut:
 # Beep boop - initialising the donut
 my_donut = Donut()
 
-# Asks the user if they are feeling lucky and a) generates lucky donut b) lets them choose between their last donut or a custom donut
+print("--------------------------")
+print("Welcome To...")
+tprint("Lucky Donuts!")
 
 while True:
     try:
