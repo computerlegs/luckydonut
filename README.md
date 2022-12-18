@@ -2,6 +2,7 @@
 
 GitHub repo: https://github.com/computerlegs/luckydonut  
 Trello workspace: https://trello.com/b/fy38UFYE/lucky-donut-app  
+Presentation: https://youtu.be/1aCfGEj28vI 
 
 ## Identify any code style guide or styling conventions that the application will adhere to.
 
