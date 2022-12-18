@@ -114,9 +114,9 @@ The script will import these when the user has Python installed, but the depende
  ![Successful app launch screen](.\docs\how-to.PNG) 
  Take note of the dir reading, you will need the files "donuts.txt", "launch.sh", "luckydonut.py" and the extra folder and it's contents. "Docs" and "README.md" are used for this readme file.
 
- Note: Make sure you have Python installed on your system. Lucky Donut requires Python to run. If you don't have Python installed, you can install it by following the instructions at https://www.python.org/downloads/.
+ Note: Make sure you have Python installed on your system to run the .py file. Otherwise, use the .sh file. If you don't have Python installed, you can install it by following the instructions at https://www.python.org/downloads/.
 
- Note: Make sure you have the required Python packages installed. Lucky Donut uses the random, art, unittest, and extra.donutart packages. If you don't have these packages installed, you can install them by running the following command:
+ Note: You may need to make sure you have the required Python packages installed. Lucky Donut uses the random, art, unittest, and extra.donutart packages. If you don't have these packages installed, you can install them by running the following command:
 
  ```
  pip install random art unittest extra.donutart
