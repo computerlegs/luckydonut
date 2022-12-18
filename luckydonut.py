@@ -121,7 +121,7 @@ class Donut:
 def welcome_message():
     print("--------------------------")
     print("Welcome To...")
-    tprint("Lucky Donuts!")
+    tprint("Lucky Donut!")
         
 # Nav - User selections
 def integer_menu():
