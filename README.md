@@ -65,21 +65,21 @@ This goes in tandem with a 'while' loop which catches the case of user entering 
 
 Here is my implementation plan from Trello:
 
- ![Implementation plan on Trello](.\docs\implementation-plan.PNG) 
+ ![Implementation plan on Trello](./docs/implementation-plan.PNG) 
 
  The three main features of the app are 1. User defined custom Donut class 2. Donut randomisation 3. Read/write donut to text file.
 
 1. User defined custom Donut class implementation checklist.
 
-  ![User donut selections](.\docs\donut-class.PNG)   
+  ![User donut selections](./docs/donut-class.PNG)   
 
 2. Randomised donut implementation checklist.
 
-  ![Random donut](.\docs\random-donut.PNG) 
+  ![Random donut](./docs/random-donut.PNG) 
 
 3. Read/write donut class to file implementation checklist.
 
-  ![Read write donut](.\docs\read_write_donut.PNG) 
+  ![Read write donut](./docs/read_write_donut.PNG) 
 
 As you can see, these simple features required at least five tasks each to be implemented fully. 
 
@@ -113,7 +113,7 @@ The script will import these when the user has Python installed, but the depende
 2. Navigate to the "luckydonut" folder in your terminal
 3. Type ./launch.sh
 
- ![Successful app launch screen](.\docs\how-to.PNG) 
+ ![Successful app launch screen](./docs/how-to.PNG) 
  Take note of the dir reading, you will need the files "donuts.txt", "launch.sh", "luckydonut.py" and the extra folder and it's contents. "Docs" and "README.md" are used for this readme file.
 
  Note: Make sure you have Python installed on your system to run the .py file. Otherwise, use the .sh file. If you don't have Python installed, you can install it by following the instructions at https://www.python.org/downloads/.
