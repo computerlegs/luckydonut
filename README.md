@@ -107,9 +107,9 @@ The script will import these when the user has Python installed, but the depende
 
 #### Installation
 
-1. Place/unzip all files together as bundled. There should be a luckydonut folder containing launch.sh file
+1. Place/unzip all files together as bundled. There should be a 'src' folder containing launch.sh file
 1. Launch WSL terminal or Ubuntu terminal
-2. Navigate to the "luckydonut" folder
+2. Navigate to the "luckydonut" folder in your terminal
 3. Type ./launch.sh
 
  ![Successful app launch screen](.\docs\how-to.PNG) 
