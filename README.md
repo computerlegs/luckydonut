@@ -36,10 +36,104 @@ These are the main features of Lucky Donut, but there are more. For example, the
 
 ## How Lucky Donut makes use of fundamental Python language elements and concepts  
 
-### Variables
+### Variables  
 
 Lucky Donut uses variables throughout. For example: Class attributes. The Donut class has three attributes: "base", "topping" and extra. They are used to control individual instances of Donut.
 Loops such as the enumeration loop have nested variables, for example "base_options" contains the variables "i" and "base" in order to format the list and present it as numeric selections.
 Variables are used for handling user input, such as the "choice" variable - which is part of the control flow code that ensures the program asks for input again in the event of an input being 0.
-The variable "my_donut" serves as the individual Donut instance.
+The variable "my_donut" serves as the individual Donut instance.   
 
+### Loops and control structures  
+
+There are multiple loops and control structures in Lucky Donut.
+
+- The 'for' loop used to iterate elements in a sequence. This is used three times, in "bases", "toppings" and "extras" to print the list with a number above 0. This allows flexibility with the lists so that code does not need to be changed if the lists are changed.
+- The 'while' loop. This loop handles errors, preventing users from entering a 0 while making menu options. The instance continues to execute until the user enters a number that is not 0 and corresponds with an index in the list. 
+- Try and except statements. There are three instances where code is checked against ValueError and IndexError.  
+
+### Error checking  
+
+All options for input in LuckyDonut were designed to be numeric. This means the code can use try and except statements to handle errors. Namely, ValueError if the input is not a number and IndexError if the option is not a valid index number. If an error is detected, the input is requested again and a message is printed. 
+
+This goes in tandem with a 'while' loop which catches the case of user entering a 0. This is not a valid choice, but is not detected by ValueError or IndexError in this case so it needed to be specifically handled with an 'if' statement in a 'while' loop.
+
+## Implementation Plan
+
+### Outline how each feature will be implemented with a checklist of tasks for each feature
+
+Here is my implementation plan from Trello:
+
+ ![Implementation plan on Trello](.\docs\implementation-plan.PNG) 
+
+ The three main features of the app are 1. User defined custom Donut class 2. Donut randomisation 3. Read/write donut to text file.
+
+1. User defined custom Donut class implementation checklist.
+
+  ![User donut selections](.\docs\donut-class.PNG)   
+
+2. Randomised donut implementation checklist.
+
+  ![Random donut](.\docs\random-donut.PNG) 
+
+3. Read/write donut class to file implementation checklist.
+
+  ![Read write donut](.\docs\read_write_donut.PNG) 
+
+As you can see, these simple features required at least five tasks each to be implemented fully. 
+
+For example, the read/write file feature required the use of Title formatting, a technique for closing the file after read/write, truncation of the file, careful placement in the control flow of the program for navigation reading, and the instance where a user has not created a donut needed to be accounted for (navigation is different first time the program is used). To view more, you can view the [Trello workspace](https://trello.com/b/fy38UFYE/lucky-donut-app).
+
+### Prioritise implementation of features  
+
+I focused on the Donut customisation feature first. Academic advisor GeorgeZ recommended starting with this, and then implementing randomisation and file handling as time permitted. In the planning stage I got individual features working, then during the period I focused on the app I implemented the features steadily over three or four days. I set a date for each feature in Trello and was able to complete them as I planned.
+
+## Documentation on how to use and install the application.
+
+### In order to run Lucky Donut you will require:
+
+-  A device capable of running Python, such as your computer (though it is possible on other devices such as a phone)
+-  Ubuntu/WSL Terminal
+
+### How does Lucky Donut run?
+
+It uses a Python interpreter. Lucky Donut includes a Python interpreter as it is launched using the bash script in 'launch.sh'
+
+### What are the dependencies for Lucky Donut?
+
+The script will import these when the user has Python installed, but the dependencies for Lucky Donut are the four modules: random, art, extra.donutart and unittest.
+
+### Instructions
+
+#### Installation
+
+1. Place/unzip all files together as bundled. There should be a luckydonut folder containing launch.sh file
+1. Launch WSL terminal or Ubuntu terminal
+2. Navigate to the "luckydonut" folder
+3. Type ./launch.sh
+
+ ![Successful app launch screen](.\docs\how-to.PNG) 
+ Take note of the dir reading, you will need the files "donuts.txt", "launch.sh", "luckydonut.py" and the extra folder and it's contents. "Docs" and "README.md" are used for this readme file.
+
+ Note: Make sure you have Python installed on your system. Lucky Donut requires Python to run. If you don't have Python installed, you can install it by following the instructions at https://www.python.org/downloads/.
+
+ Note: Make sure you have the required Python packages installed. Lucky Donut uses the random, art, unittest, and extra.donutart packages. If you don't have these packages installed, you can install them by running the following command:
+
+ ```
+ pip install random art unittest extra.donutart
+ ```
+
+ Note: Make sure you have the necessary permissions to run the launch.sh script. You may need to use the chmod command to make the script executable:
+
+ ```
+ chmod +x launch.sh
+ ```
+
+#### Using Lucky Donut 
+
+To get a custom donut, press 1 on the main menu. This will start a sequence to customise a donut. Follow the prompts and enter valid numbers to select corresponding options.
+
+To get a random donut, press 2. 
+
+To get the last donut created in Lucky Donut, press 3.
+
+Note: All three options will save the donut to a text file.
