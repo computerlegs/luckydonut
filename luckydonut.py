@@ -101,6 +101,21 @@ class Donut:
             self.topping = file.readline().strip()
             self.extra = file.readline().strip()
             
+# Serve the donut
+    def serve_donut(self):
+        if my_donut.topping == "no topping":
+            donut_image()
+            print(f"Your donut has a {my_donut.base} base, has {my_donut.topping}, and has {my_donut.extra} as an extra.")
+        elif my_donut.topping == "rainbow" and my_donut.extra == "rainbow flakes":
+            print("Wow, a Unicorn donut!")
+            unicorn_image()
+            print(f"Your donut has {my_donut.topping} topping and {my_donut.extra} to match... that's pretty. Your base is {my_donut.base}.")
+        elif my_donut.topping == "None":
+            print("You have never had a lucky donut.")
+        else:
+            donut_image()
+            print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
+            
 # Testing the donut
 
 class TestDonut(unittest.TestCase):
@@ -142,7 +157,7 @@ class TestDonut(unittest.TestCase):
         # Check that the extra is correct
         self.assertEqual(test_read_donut.extra, 'test')
 
-#  Uncomment the code below to perform tests on file run
+#  Uncomment the code below to perform tests
 
 # if __name__ == '__main__':
 #     print("Testing: 1. Random donut generator is generating options from selections")
@@ -156,6 +171,7 @@ print("--------------------------")
 print("Welcome To...")
 tprint("Lucky Donuts!")
 
+# Navigation / user selections
 while True:
     try:
         my_donut.read_donut()
@@ -198,15 +214,4 @@ while True:
 my_donut.write_donut()
 
 # Serves the donut
-if my_donut.topping == "no topping":
-    donut_image()
-    print(f"Your donut has a {my_donut.base} base, has {my_donut.topping}, and has {my_donut.extra} as an extra.")
-elif my_donut.topping == "rainbow" and my_donut.extra == "rainbow flakes":
-    print("Wow, a Unicorn donut!")
-    unicorn_image()
-    print(f"Your donut has {my_donut.topping} topping and {my_donut.extra} to match... that's pretty. Your base is {my_donut.base}.")
-elif my_donut.topping == "None":
-    print("You have never had a lucky donut.")
-else:
-    donut_image()
-    print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
+my_donut.serve_donut()
