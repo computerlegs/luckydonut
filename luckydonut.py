@@ -115,6 +115,54 @@ class Donut:
         else:
             donut_image()
             print(f"Your donut has a {my_donut.base} base, is topped with {my_donut.topping}, and has {my_donut.extra} as an extra.")
+       
+# Navigation menu     
+
+def welcome_message():
+    print("--------------------------")
+    print("Welcome To...")
+    tprint("Lucky Donuts!")
+        
+# Nav - User selections
+def integer_menu():
+    while True:
+        try:
+            my_donut.read_donut()
+            print("Welcome to Lucky Donuts. What would you like?")
+            if my_donut.base == "":
+                print("1. Let me choose my own donut options for base, topping and extras")
+                print("2. I'm feeling lucky!")
+                menu_option = int(input("Enter your choice:"))
+                if menu_option == 1:
+                    print("You donut have to feel lucky all the time!")
+                    print("Choose your own options for your donut.")
+                    my_donut.choose_donut_options()
+                    break
+                elif menu_option == 2:
+                    print("Fortune favors the brave. Enjoy the donut.")
+                    my_donut.generate_random_donut()
+                    break
+            else:
+                print("1. Let me choose my own donut options for base, topping and extras")
+                print("2. I'm feeling lucky!")
+                print(f"3. Repeat the last donut. Base: {my_donut.base.title()}, Topping: {my_donut.topping.title()}, Extra: {my_donut.extra.title()}")
+                menu_option = int(input("Enter your choice:"))
+                if menu_option == 1:
+                    print("You donut have to feel lucky all the time!")
+                    print("Choose your own options for your donut.")
+                    my_donut.choose_donut_options()
+                    break
+                elif menu_option == 2:
+                    print("Fortune smiles at the brave. Enjoy the donut.")
+                    my_donut.generate_random_donut()
+                    break
+                elif menu_option == 3:
+                    my_donut.read_donut()
+                    break
+            print("Please enter a valid choice as a number corresponding to the selection.")
+        except ValueError:
+            print("Please enter a valid choice as a number corresponding to the selection.")
+    
             
 # Testing the donut
 
@@ -167,51 +215,14 @@ class TestDonut(unittest.TestCase):
 # Beep boop - initialising the donut
 my_donut = Donut()
 
-print("--------------------------")
-print("Welcome To...")
-tprint("Lucky Donuts!")
+# Welcome message
+welcome_message()
 
-# Navigation / user selections
-while True:
-    try:
-        my_donut.read_donut()
-        print("Welcome to Lucky Donuts. What would you like?")
-        if my_donut.base == "":
-            print("1. Let me choose my own donut options for base, topping and extras")
-            print("2. I'm feeling lucky!")
-            menu_option = int(input("Enter your choice:"))
-            if menu_option == 1:
-                print("You donut have to feel lucky all the time!")
-                print("Choose your own options for your donut.")
-                my_donut.choose_donut_options()
-                break
-            elif menu_option == 2:
-                print("Fortune smiles at the brave. Enjoy the donut.")
-                my_donut.generate_random_donut()
-                break
-        else:
-            print("1. Let me choose my own donut options for base, topping and extras")
-            print("2. I'm feeling lucky!")
-            print(f"3. Repeat the last donut. Base: {my_donut.base.title()}, Topping: {my_donut.topping.title()}, Extra: {my_donut.extra.title()}")
-            menu_option = int(input("Enter your choice:"))
-            if menu_option == 1:
-                print("You donut have to feel lucky all the time!")
-                print("Choose your own options for your donut.")
-                my_donut.choose_donut_options()
-                break
-            elif menu_option == 2:
-                print("Fortune smiles at the brave. Enjoy the donut.")
-                my_donut.generate_random_donut()
-                break
-            elif menu_option == 3:
-                my_donut.read_donut()
-                break
-        print("Please enter a valid choice as a number corresponding to the selection.")
-    except ValueError:
-        print("Please enter a valid choice as a number corresponding to the selection.")
-
-# Writes the current donut to a text file
-my_donut.write_donut()
+# Menu options
+integer_menu()
 
 # Serves the donut
 my_donut.serve_donut()
+
+# Writes the current donut to a text file
+my_donut.write_donut()
